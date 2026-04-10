@@ -122,8 +122,8 @@ if st.session_state.current_signal is not None:
         
         with st.spinner('AI is analyzing morphology and R-R intervals...'):
             time.sleep(1) # Fake loading time for clinical effect
-            
-         tensor_signal = torch.tensor(st.session_state.current_signal.copy(), dtype=torch.float32).unsqueeze(0).unsqueeze(0)
+
+            tensor_signal = torch.tensor(st.session_state.current_signal.copy(), dtype=torch.float32).unsqueeze(0).unsqueeze(0)
             with torch.no_grad():
                 raw_score = ai_model(tensor_signal)
                 risk_prob = torch.sigmoid(raw_score).item()
