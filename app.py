@@ -2,11 +2,11 @@ import streamlit as st
 import torch
 import torch.nn as nn
 import numpy as np
-from scipy.signal import butter, filtfilt, rfft, rfftfreq
-from skimage.feature import peak_local_max # Requires scikit-image
+from scipy.signal import butter, filtfilt
+from scipy.fft import rfft, rfftfreq
+from skimage.feature import peak_local_max 
 import plotly.graph_objects as go
 import time
-
 # --- 1. DEFINE THE AI ARCHITECTURE (Must match trained model exactly) ---
 class StrokeWatchNet(nn.Module):
     def __init__(self, num_leads=1):
