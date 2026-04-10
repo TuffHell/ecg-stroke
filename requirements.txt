@@ -3,3 +3,4 @@ torch
 numpy
 scipy
 plotly
+scikit-image
